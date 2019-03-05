@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Adding_new_column" xml:space="preserve">
+    <value>Adding new column</value>
+  </data>
+  <data name="Add_checkpoint" xml:space="preserve">
+    <value>Add checkpoint</value>
+  </data>
+  <data name="Add_comment" xml:space="preserve">
+    <value>Add comment</value>
+  </data>
+  <data name="Add_employee" xml:space="preserve">
+    <value>Add an emloyee</value>
+  </data>
+  <data name="Add_new_task" xml:space="preserve">
+    <value>Add new task</value>
+  </data>
+  <data name="Add_subcolumn" xml:space="preserve">
+    <value>Add subcolumn</value>
+  </data>
+  <data name="App_title" xml:space="preserve">
+    <value>Kanban scheduling system</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Birth_date" xml:space="preserve">
+    <value>Birth date</value>
+  </data>
+  <data name="Checkpoints" xml:space="preserve">
+    <value>Checkpoints</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="Choose_employee" xml:space="preserve">
+    <value>Choose an employee to work on a project</value>
+  </data>
+  <data name="Choose_project" xml:space="preserve">
+    <value>Choose an existing project</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="Company_name" xml:space="preserve">
+    <value>Company name</value>
+  </data>
+  <data name="Create_new" xml:space="preserve">
+    <value>Create new</value>
+  </data>
+  <data name="Creating_new_project" xml:space="preserve">
+    <value>Creating new project</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Employee_list" xml:space="preserve">
+    <value>Employee list</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="Finish_date" xml:space="preserve">
+    <value>Finish date</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Horizontal_split" xml:space="preserve">
+    <value>Horizontal split</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Move_left" xml:space="preserve">
+    <value>Move left</value>
+  </data>
+  <data name="Move_right" xml:space="preserve">
+    <value>Move right</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="New_checkpoint" xml:space="preserve">
+    <value>New checkpoint</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Oops" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Refresh_table" xml:space="preserve">
+    <value>Refresh table</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Remove_column" xml:space="preserve">
+    <value>Remove column</value>
+  </data>
+  <data name="Save_as_template" xml:space="preserve">
+    <value>Save as template</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Show_chart" xml:space="preserve">
+    <value>Show chart</value>
+  </data>
+  <data name="Split" xml:space="preserve">
+    <value>Split</value>
+  </data>
+  <data name="Start_date" xml:space="preserve">
+    <value>Start date</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="Templates" xml:space="preserve">
+    <value>Templates</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Vertical_split" xml:space="preserve">
+    <value>Vertical split</value>
+  </data>
+  <data name="Your_comment" xml:space="preserve">
+    <value>Your comment</value>
+  </data>
+</root>

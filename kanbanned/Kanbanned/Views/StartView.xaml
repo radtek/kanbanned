@@ -1,0 +1,89 @@
+﻿<UserControl x:Name="ucCont" x:Class="Kanbanned.Views.StartView" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
+             xmlns:kb="clr-namespace:Kanbanned.Models"
+             xmlns:kh="clr-namespace:Kanbanned.Helpers"  
+             xmlns:local="clr-namespace:Kanbanned.Views"
+             xmlns:gl="clr-namespace:Kanbanned"
+             xmlns:lvm="clr-namespace:Kanbanned.ViewModels"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <kh:BooleanToVisibilityValueConverter x:Key="converter"/>
+        <kh:EditToEnabledValueConverter x:Key="ulogaConverterEdit"/>
+        <kh:RemoveToEnabledValueConverter x:Key="ulogaConverterRemove"/>
+    </UserControl.Resources>
+    <StackPanel>
+        <Label Margin="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Helvetica" FontSize="22" Content="{DynamicResource Choose_project}"/>
+        <Grid>
+            <Label Name="lblEmptyGrid"  VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Helvetica" FontSize="20" Visibility="{Binding HasItems,ElementName=grid,Converter={StaticResource converter}}" Content="{DynamicResource Oops}"/>
+            <Button Background="Brown" FontSize="18" Content="+" HorizontalAlignment="Right" Margin="0, 0, 150, 0" ToolTip="{DynamicResource Create_new}" Command="{Binding Path=CreateNewCommand}"/>
+            <Label HorizontalAlignment="Right" Content="{DynamicResource Create_new}" FontSize="15" FontFamily="Helvetica" Margin="0, 0, 60, 0"/>
+
+        </Grid>
+        <DataGrid Name="grid" ItemsSource="{Binding Projekti}" HorizontalAlignment="Center" FontFamily="Helvetica" FontSize="15"
+                  materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8"  AutoGenerateColumns="False" IsReadOnly="True" Background="Transparent" SelectionUnit="FullRow" SelectionMode="Single">
+
+            <!-- promena izgleda selekcije celija -->
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="DataGridCell.IsSelected" Value="True">
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{DynamicResource Name}" Binding="{Binding Ime}">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Setter Property="ToolTip" Value="{Binding Opis}" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="{DynamicResource Role}" Binding="{Binding Privilegija}" CellStyle="{StaticResource DataGridTextAlignment}"/>
+                <DataGridTextColumn Header="{DynamicResource Start_date}" Binding="{Binding DatumKreiranja}" CellStyle="{StaticResource DataGridTextAlignment}"/>
+                <DataGridTextColumn Header="{DynamicResource Finish_date}" Binding="{Binding DatumZavrsetka, TargetNullValue=N/A}" CellStyle="{StaticResource DataGridTextAlignment}"/>
+
+                <!-- dodavanje buttona za popupbox za biranje akcije -->
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10"> 
+                                <StackPanel Width="100">
+                                    <Button Content="{DynamicResource Open}" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.OpenProjectCommand}" CommandParameter="{Binding}"/>
+                                    <Button Content="{DynamicResource Edit}" IsEnabled="{Binding Privilegija, Converter={StaticResource ulogaConverterEdit}}" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.EditCommand}" CommandParameter="{Binding}"/>
+                                    <Button Content="{DynamicResource Remove}" IsEnabled="{Binding Privilegija, Converter={StaticResource ulogaConverterRemove}}" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.RemoveCommand}" CommandParameter="{Binding}"/>
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+            <DataGrid.Style>
+                <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource {x:Type DataGrid}}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Items.Count, RelativeSource={RelativeSource Self}}" Value="0">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Style>
+        </DataGrid>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Kanbanned.Views.DodajRadnikaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Kanbanned.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <Label Margin="40" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Helvetica" FontSize="22" Content="{DynamicResource Choose_emloyee}"/>
+            <Label Content="{DynamicResource Name}" FontFamily="Helvetica" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold" />
+
+            <Grid Width="300">
+                <TextBox Margin="20" FontFamily="Helvetica" FontSize="18" Width="250" Text="{Binding Ime}"></TextBox>
+                <Button Background="Brown" FontSize="18" Content="+" Margin="0, 0, 0, 0" ToolTip="{DynamicResource Add_employee}" Command="{Binding Path=AddCommand}" HorizontalAlignment="Right"/>
+            </Grid>
+            <Grid HorizontalAlignment="Center">
+                <Button Background="Brown" Width="150" Margin="-100, 50, 0, 80" Command="{Binding NextCommand}"  HorizontalAlignment="Left" Content="{DynamicResource Next}"/>
+                <Button Background="Brown" Width="150" Margin="80, 50, -100, 80" Command="{Binding GoBackCommand}" HorizontalAlignment="Right" Content="{DynamicResource Back}"/>
+            </Grid>
+        </StackPanel>
+        <ScrollViewer Grid.Column="1">
+            <StackPanel Orientation="Vertical">
+                <Label FontSize="22" FontFamily="Helvetica" HorizontalAlignment="Center" Margin="40" Content="{DynamicResource Employee_list}"/>
+                <ListView HorizontalAlignment="Center" ItemsSource="{Binding Path=Radnici}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 15, 0, 0">
+                                <Button Background="Brown" Width="50" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Content="X" ToolTip="{DynamicResource Remove}" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.RemoveCommand}" CommandParameter="{Binding}"/>
+                                <Label FontSize="16" FontStyle="Italic" FontFamily="Helvetica" Content="{Binding Path=Ime}" HorizontalAlignment="Left" FontWeight="SemiBold" Width="100"/>
+                                <ComboBox FontFamily="Helvetica" FontWeight="SemiBold" Width="100" SelectedValuePath="Content" SelectedValue="{Binding Path=Uloga}">
+                                    <ComboBoxItem>VODJA</ComboBoxItem>
+                                    <ComboBoxItem>RADNIK</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

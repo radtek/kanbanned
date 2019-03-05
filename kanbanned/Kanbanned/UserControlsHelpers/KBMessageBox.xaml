@@ -1,0 +1,14 @@
+﻿<Contorls:MetroWindow
+        xmlns:Contorls="http://metro.mahapps.com/winfx/xaml/controls" x:Class="Kanbanned.UserControlsHelpers.KBMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kanbanned.UserControlsHelpers"
+        mc:Ignorable="d"
+        Height="250" Width="250" Background="LightGoldenrodYellow" ShowCloseButton="False" ShowMinButton="False" ShowMaxRestoreButton="False" WindowStartupLocation="CenterScreen" DataContext="{Binding RelativeSource={RelativeSource Self}}" ResizeMode="NoResize">
+    <StackPanel Orientation="Vertical">
+        <TextBlock TextWrapping="Wrap" Width="200" FontFamily="Helvetica" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 10" TextAlignment="Center"/>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="80" FontFamily="Helvetica">Ok</Button>
+    </StackPanel>
+</Contorls:MetroWindow>

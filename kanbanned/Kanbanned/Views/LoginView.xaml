@@ -1,0 +1,37 @@
+﻿<Controls:MetroWindow x:Class="Kanbanned.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:Kanbanned"
+        mc:Ignorable="d"
+        Title="Kanbanned" Height="450" Width="800" Background="LightGoldenrodYellow" TitleCaps="False" WindowStartupLocation="CenterScreen" ShowCloseButton="False" ResizeMode="NoResize">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard Duration="00:00:1" Storyboard.TargetProperty="Opacity">
+                    <DoubleAnimation From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Unloaded">
+            <BeginStoryboard>
+                <Storyboard Duration="00:00:1" Storyboard.TargetProperty="Opacity">
+                    <DoubleAnimation From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <StackPanel Orientation="Vertical">
+        <Label Content="{DynamicResource Login}" FontFamily="Helvetica" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" Margin="311, 40"/>
+        <Label Content="{DynamicResource Username}" FontFamily="Helvetica" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold" />
+        <TextBox FontSize="17" Controls:TextBoxHelper.ClearTextButton="False" Width="250" Text="{Binding Username}" TextAlignment="Center"></TextBox>
+        <Label Content="{DynamicResource Password}" FontFamily="Helvetica" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold"/>
+        <PasswordBox Name="txtPassword" Width="250" MaxLength="15" FontSize="17" TextBlock.TextAlignment="Center"/>
+        <Grid>
+            <Button Style="{DynamicResource SquareButtonStyle}" Width="150" Margin="200, 80, 80, 80" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=txtPassword}" HorizontalAlignment="Left" Content="{DynamicResource Login}"/>
+            <Button Style="{DynamicResource SquareButtonStyle}" Width="150" Margin="80, 80, 200, 80" Command="{Binding GoBackCommand}" HorizontalAlignment="Right" Content="{DynamicResource Back}"/>
+        </Grid>
+    </StackPanel>
+</Controls:MetroWindow>
